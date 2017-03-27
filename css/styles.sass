@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Lato')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+$theme-color: rgba(86, 46, 45, 0.8)
+$linear-gradient: linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0.1))
+
+=background-img($imgurl)
+  background: $linear-gradient, url($imgurl)
+
+  background-size: cover
 
 *
   padding: 0
@@ -6,11 +13,18 @@
 
 html, body
   color: black
-  font-family: 'Lato', sans-serif
+  font-family: 'Open Sans', sans-serif
+  font-weight: 300
+  -webkit-font-smoothing: antialiased
   height: 100%
+
 
 ul
   list-style: none
+
+img
+  width: 100%
+  height: auto
 
 .main-container
   background: white
@@ -18,44 +32,60 @@ ul
 
 .main-sidebar
   width: 30%
-  background: rgba(90, 105, 134, 1)
+  background: $theme-color
   display: flex
   flex-wrap: nowrap
   flex-direction: column
   position: fixed
   height: 100%
-  // padding: 1em
+  > *
+    padding: 1em
+
+.main-sidebar a
+  color: whitesmoke
+  text-decoration: none
+  opacity: 1
+  transition: all .2s ease-in-out
+  &:hover
+    opacity: 0.8
 
 .main-sidebar-logo
   flex: 0 0 30%
   display: flex
   align-items: center
   justify-content: center
-  border-bottom: 1px solid black
+  padding: 1em
+  img
+    max-width: 183px
 
 // nav
 .main-sidebar-nav
   flex: 0 0 70%
   text-align: center
-  border-bottom: 1px solid black
 
 .main-site-nav-links
   > li
     line-height: 1.5
     padding: 0.5em
+    letter-spacing: 3px
     text-transform: uppercase
 
 .main-site-social-links
   padding-top: 1em
   > *
     display: inline-block
+  a
+    color: $theme-color
+
+.fa-stack
+  font-size: 1rem
 
 
 .main-content
   position: absolute
   left: 30%
   min-height: 100%
-  width: 100%
+  width: 70%
 
 // works preview
 .main-content-previews
@@ -66,3 +96,16 @@ ul
   > *
     flex: 0 0 50%
     min-height: 50vh
+    display: relative
+
+  &-one
+    +background-img('../assets/tubbie.svg')
+
+  &-two
+    +background-img('../assets/coco.png')
+
+  &-three
+    +background-img('../assets/dandy.jpg')
+
+  &-four
+    +background-img('../assets/libchat.png')
