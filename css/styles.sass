@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+$theme-color: rgba(86, 46, 45, 0.8)
+$linear-gradient: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.6))
+
+=background-img($imgurl)
+  background: $linear-gradient, url($imgurl)
+  background-size: cover
+
+=transition($sec)
+  -webkit-transition: all $sec ease-in-out
+  transition: all $sec ease-in-out
+
+=grow($size)
+  -webkit-transform: scale($size)
+  transform: scale($size)
+*
+  padding: 0
+  margin: 0
+
+html, body
+  color: black
+  font-family: 'Open Sans', sans-serif
+  font-weight: 300
+  -webkit-font-smoothing: antialiased
+  height: 100%
+
+
+ul
+  list-style: none
+
+img
+  width: 100%
+  height: auto
+
+.main-container
+  background: white
+  width: 100%
+
+.main-sidebar
+  width: 30%
+  background: $theme-color
+  display: flex
+  flex-wrap: nowrap
+  flex-direction: column
+  position: fixed
+  height: 100%
+  > *
+    padding: 1em
+
+.main-sidebar a
+  color: whitesmoke
+  text-decoration: none
+  opacity: 1
+  transition: all .2s ease-in-out
+  &:hover
+    opacity: 0.8
+
+.main-sidebar-logo
+  flex: 0 0 30%
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 1em
+  img
+    max-width: 183px
+
+// nav
+.main-sidebar-nav
+  flex: 0 0 70%
+  text-align: center
+
+.main-site-nav-links
+  > li
+    line-height: 1.5
+    padding: 0.5em
+    letter-spacing: 3px
+    text-transform: uppercase
+
+.main-site-social-links
+  padding-top: 1em
+  > *
+    display: inline-block
+  a
+    color: $theme-color
+
+.fa-stack
+  font-size: 1rem
+
+
+.main-content-container
+  position: absolute
+  left: 30%
+  min-height: 100%
+  width: 70%
+  background: rebeccapurple
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+
+// works preview
+.main-content-previews
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  background: white
+
+  > *
+    flex: 0 0 50%
+    min-height: 50vh
+    visibility: visible
+    background: #e6dfd4
+    background-position: 100% -100% /*slide from above*/
+    background-repeat: repeat
+    background-size: contain
+    color: white
+    font-size: 6.2vw
+    font-weight: 700
+    display: flex
+    justify-content: center
+    align-items: center
+    +transition(0.5s)
+
+.one
+  +background-img('../assets/tubbie.svg')
+
+.two
+  +background-img('../assets/coco.png')
+
+.three
+  +background-img('../assets/dandy.jpg')
+
+.four
+  +background-img('../assets/libchat.png')
+
+.main-content
+  +transition(0.2s)
+  visibility: hidden
+  opacity: 0
+  width: 50%
+  height: 0
+
+
+.open
+  visibility: visible
+  opacity: 1
+  width: 100%
+  height: 100vh
+  background: white
+
+.reverse-order
+  flex-flow: column-reverse
+  > .main-content-previews
+    > *
+      flex: 0 0 33.3%
+
+.close
+  position: absolute
+  visibility: hidden
+  opacity: 0
