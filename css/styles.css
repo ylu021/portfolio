@@ -82,23 +82,40 @@ img {
 .main-content-previews {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  background: white; }
   .main-content-previews > * {
     flex: 0 0 50%;
     min-height: 50vh;
-    visibility: visible; }
-  .main-content-previews-one {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../assets/tubbie.svg");
-    background-size: cover; }
-  .main-content-previews-two {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../assets/coco.png");
-    background-size: cover; }
-  .main-content-previews-three {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../assets/dandy.jpg");
-    background-size: cover; }
-  .main-content-previews-four {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../assets/libchat.png");
-    background-size: cover; }
+    visibility: visible;
+    background: #e6dfd4;
+    background-position: 100% -100%;
+    background-repeat: repeat;
+    background-size: contain;
+    color: white;
+    font-size: 6.2vw;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+
+.one {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../assets/tubbie.svg");
+  background-size: cover; }
+
+.two {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../assets/coco.png");
+  background-size: cover; }
+
+.three {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../assets/dandy.jpg");
+  background-size: cover; }
+
+.four {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../assets/libchat.png");
+  background-size: cover; }
 
 .main-content {
   -webkit-transition: all 0.2s ease-in-out;

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
 $theme-color: rgba(86, 46, 45, 0.8)
-$linear-gradient: linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0.1))
+$linear-gradient: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.6))
 
 =background-img($imgurl)
   background: $linear-gradient, url($imgurl)
@@ -102,24 +102,35 @@ img
   display: flex
   flex-direction: row
   flex-wrap: wrap
+  background: white
 
   > *
     flex: 0 0 50%
     min-height: 50vh
     visibility: visible
-    // +transition(0.1s)
+    background: #e6dfd4
+    background-position: 100% -100% /*slide from above*/
+    background-repeat: repeat
+    background-size: contain
+    color: white
+    font-size: 6.2vw
+    font-weight: 700
+    display: flex
+    justify-content: center
+    align-items: center
+    +transition(0.5s)
 
-  &-one
-    +background-img('../assets/tubbie.svg')
+.one
+  +background-img('../assets/tubbie.svg')
 
-  &-two
-    +background-img('../assets/coco.png')
+.two
+  +background-img('../assets/coco.png')
 
-  &-three
-    +background-img('../assets/dandy.jpg')
+.three
+  +background-img('../assets/dandy.jpg')
 
-  &-four
-    +background-img('../assets/libchat.png')
+.four
+  +background-img('../assets/libchat.png')
 
 .main-content
   +transition(0.2s)
