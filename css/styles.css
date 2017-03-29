@@ -69,11 +69,15 @@ img {
 .fa-stack {
   font-size: 1rem; }
 
-.main-content {
+.main-content-container {
   position: absolute;
   left: 30%;
   min-height: 100%;
-  width: 70%; }
+  width: 70%;
+  background: rebeccapurple;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
 
 .main-content-previews {
   display: flex;
@@ -82,7 +86,7 @@ img {
   .main-content-previews > * {
     flex: 0 0 50%;
     min-height: 50vh;
-    display: relative; }
+    visibility: visible; }
   .main-content-previews-one {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../assets/tubbie.svg");
     background-size: cover; }
@@ -95,5 +99,30 @@ img {
   .main-content-previews-four {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../assets/libchat.png");
     background-size: cover; }
+
+.main-content {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  width: 50%;
+  height: 0; }
+
+.open {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: 100vh;
+  background: white; }
+
+.reverse-order {
+  flex-flow: column-reverse; }
+  .reverse-order > .main-content-previews > * {
+    flex: 0 0 33.3%; }
+
+.close {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0; }
 
 /*# sourceMappingURL=styles.css.map */

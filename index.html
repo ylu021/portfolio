@@ -21,7 +21,7 @@
             <nav class="main-sidebar-nav">
               <ul class="main-site-nav-links">
                 <li><a target="_blank" href="/about">About</a></li>
-                <li><a target="_blank" href="/works">Works</a></li>
+                <li><a target="_blank" href="/">Works</a></li>
                 <li><a target="_blank" href="assets/resume.pdf">Resume</a></li>
                 <li><a href="mailto:yichen.luu@gmail.com">Email</a></li>
               </ul>
@@ -61,19 +61,20 @@
               </ul>
             </nav>
           </div>
-          <div class="main-content">
-            <ul class="main-content-previews">
-              <li class="main-content-previews-one">
-                <a href="/works/tubbies">
-                  Tubbies
-                </a>
-              </li>
-              <li class="main-content-previews-two">work2</li>
-              <li class="main-content-previews-three">work3</li>
-              <li class="main-content-previews-four">work4</li>
+          <div id="container" class="main-content-container">
+            <ul id="previews" class="main-content-previews">
+              <li data-id="p1" class="main-content-previews-one">work1</li>
+              <li data-id="p2" class="main-content-previews-two">work2</li>
+              <li data-id="p3" class="main-content-previews-three">work3</li>
+              <li data-id="p4" class="main-content-previews-four">work4</li>
             </ul>
+            <div id="p1" class="main-content">Hello world from Tubbies</div>
+            <div id="p2" class="main-content">Hello world from Coco</div>
+            <div id="p3" class="main-content">Hello world from Dandy</div>
+            <div id="p4" class="main-content">Hello world from LibChat</div>
           </div>
         </div>
         <!-- google analytics -->
+        <script src="main.js"></script>
     </body>
 </html>
